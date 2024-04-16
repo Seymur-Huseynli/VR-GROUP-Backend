@@ -15,7 +15,7 @@ public class BoxRepository
 
     public async Task BulkInsert(IReadOnlyList<Box> boxes)
     {
-        (DataTable BoxesTable, DataTable ContentsTable) = CreateDataTablesFromBoxes(boxes);
+        (DataTable? BoxesTable, DataTable? ContentsTable) = CreateDataTablesFromBoxes(boxes);
 
         using (var connection = new SqlConnection(_connectionString))
         {
@@ -35,8 +35,10 @@ public class BoxRepository
         }
     }
 
-    public static (DataTable BoxesTable, DataTable ContentsTable) CreateDataTablesFromBoxes(IReadOnlyList<Box> boxes)
+    public static (DataTable? BoxesTable, DataTable? ContentsTable) CreateDataTablesFromBoxes(IReadOnlyList<Box> boxes)
     {
+        if (boxes == null || boxes.Count == 0) return (null, null);
+
         DataTable boxesTable = new DataTable("Boxes");
         boxesTable.Columns.Add("SupplierIdentifier", typeof(string));
         boxesTable.Columns.Add("Identifier", typeof(string));
