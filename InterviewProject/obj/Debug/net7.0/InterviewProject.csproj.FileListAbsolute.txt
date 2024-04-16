@@ -1,0 +1,15 @@
+D:\Projects\C#\InterviewProject\InterviewProject\bin\Debug\net7.0\InterviewProject.exe
+D:\Projects\C#\InterviewProject\InterviewProject\bin\Debug\net7.0\InterviewProject.deps.json
+D:\Projects\C#\InterviewProject\InterviewProject\bin\Debug\net7.0\InterviewProject.runtimeconfig.json
+D:\Projects\C#\InterviewProject\InterviewProject\bin\Debug\net7.0\InterviewProject.dll
+D:\Projects\C#\InterviewProject\InterviewProject\bin\Debug\net7.0\InterviewProject.pdb
+D:\Projects\C#\InterviewProject\InterviewProject\obj\Debug\net7.0\InterviewProject.csproj.AssemblyReference.cache
+D:\Projects\C#\InterviewProject\InterviewProject\obj\Debug\net7.0\InterviewProject.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\C#\InterviewProject\InterviewProject\obj\Debug\net7.0\InterviewProject.AssemblyInfoInputs.cache
+D:\Projects\C#\InterviewProject\InterviewProject\obj\Debug\net7.0\InterviewProject.AssemblyInfo.cs
+D:\Projects\C#\InterviewProject\InterviewProject\obj\Debug\net7.0\InterviewProject.csproj.CoreCompileInputs.cache
+D:\Projects\C#\InterviewProject\InterviewProject\obj\Debug\net7.0\InterviewProject.dll
+D:\Projects\C#\InterviewProject\InterviewProject\obj\Debug\net7.0\refint\InterviewProject.dll
+D:\Projects\C#\InterviewProject\InterviewProject\obj\Debug\net7.0\InterviewProject.pdb
+D:\Projects\C#\InterviewProject\InterviewProject\obj\Debug\net7.0\InterviewProject.genruntimeconfig.cache
+D:\Projects\C#\InterviewProject\InterviewProject\obj\Debug\net7.0\ref\InterviewProject.dll
