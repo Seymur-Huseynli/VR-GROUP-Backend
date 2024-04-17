@@ -1,7 +1,10 @@
-﻿using InterviewProject.Services;
+﻿using InterviewProject.Repositories;
+using InterviewProject.Services;
 
-string folderPatch = "D:\\Projects\\Tasks_VR_GROUP\\VR_Challenge_Senior_backend_developer";
+var folderPatch = "C:\\Users\\shuseynli\\Desktop\\example\\VR GROUP DATA";
 
-var fileImportMonitor = new FileImportMonitor(folderPatch);
+var boxRepository = new BoxRepository("Server=localhost; Database=VR.GROUP.TEST; Integrated Security=True;");
+
+var fileImportMonitor = new FileImportMonitor(folderPatch, boxRepository);
 
 fileImportMonitor.StartMonitoring();

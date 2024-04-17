@@ -13,3 +13,26 @@ D:\Projects\C#\InterviewProject\InterviewProject\obj\Debug\net7.0\refint\Intervi
 D:\Projects\C#\InterviewProject\InterviewProject\obj\Debug\net7.0\InterviewProject.pdb
 D:\Projects\C#\InterviewProject\InterviewProject\obj\Debug\net7.0\InterviewProject.genruntimeconfig.cache
 D:\Projects\C#\InterviewProject\InterviewProject\obj\Debug\net7.0\ref\InterviewProject.dll
+C:\Users\shuseynli\Desktop\example\VR GROUP\VR-GROUP-Backend\InterviewProject\obj\Debug\net7.0\InterviewProject.csproj.AssemblyReference.cache
+C:\Users\shuseynli\Desktop\example\VR GROUP\VR-GROUP-Backend\InterviewProject\obj\Debug\net7.0\InterviewProject.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\shuseynli\Desktop\example\VR GROUP\VR-GROUP-Backend\InterviewProject\obj\Debug\net7.0\InterviewProject.AssemblyInfoInputs.cache
+C:\Users\shuseynli\Desktop\example\VR GROUP\VR-GROUP-Backend\InterviewProject\obj\Debug\net7.0\InterviewProject.AssemblyInfo.cs
+C:\Users\shuseynli\Desktop\example\VR GROUP\VR-GROUP-Backend\InterviewProject\obj\Debug\net7.0\InterviewProject.csproj.CoreCompileInputs.cache
+C:\Users\shuseynli\Desktop\example\VR GROUP\VR-GROUP-Backend\InterviewProject\obj\Debug\net7.0\InterviewProject.sourcelink.json
+C:\Users\shuseynli\Desktop\example\VR GROUP\VR-GROUP-Backend\InterviewProject\obj\Debug\net7.0\InterviewProject.dll
+C:\Users\shuseynli\Desktop\example\VR GROUP\VR-GROUP-Backend\InterviewProject\obj\Debug\net7.0\refint\InterviewProject.dll
+C:\Users\shuseynli\Desktop\example\VR GROUP\VR-GROUP-Backend\InterviewProject\obj\Debug\net7.0\InterviewProject.pdb
+C:\Users\shuseynli\Desktop\example\VR GROUP\VR-GROUP-Backend\InterviewProject\bin\Debug\net7.0\InterviewProject.exe
+C:\Users\shuseynli\Desktop\example\VR GROUP\VR-GROUP-Backend\InterviewProject\bin\Debug\net7.0\InterviewProject.deps.json
+C:\Users\shuseynli\Desktop\example\VR GROUP\VR-GROUP-Backend\InterviewProject\bin\Debug\net7.0\InterviewProject.runtimeconfig.json
+C:\Users\shuseynli\Desktop\example\VR GROUP\VR-GROUP-Backend\InterviewProject\bin\Debug\net7.0\InterviewProject.dll
+C:\Users\shuseynli\Desktop\example\VR GROUP\VR-GROUP-Backend\InterviewProject\bin\Debug\net7.0\InterviewProject.pdb
+C:\Users\shuseynli\Desktop\example\VR GROUP\VR-GROUP-Backend\InterviewProject\bin\Debug\net7.0\System.Data.SqlClient.dll
+C:\Users\shuseynli\Desktop\example\VR GROUP\VR-GROUP-Backend\InterviewProject\bin\Debug\net7.0\runtimes\win-arm64\native\sni.dll
+C:\Users\shuseynli\Desktop\example\VR GROUP\VR-GROUP-Backend\InterviewProject\bin\Debug\net7.0\runtimes\win-x64\native\sni.dll
+C:\Users\shuseynli\Desktop\example\VR GROUP\VR-GROUP-Backend\InterviewProject\bin\Debug\net7.0\runtimes\win-x86\native\sni.dll
+C:\Users\shuseynli\Desktop\example\VR GROUP\VR-GROUP-Backend\InterviewProject\bin\Debug\net7.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\shuseynli\Desktop\example\VR GROUP\VR-GROUP-Backend\InterviewProject\bin\Debug\net7.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\shuseynli\Desktop\example\VR GROUP\VR-GROUP-Backend\InterviewProject\obj\Debug\net7.0\Intervie.D6A868D9.Up2Date
+C:\Users\shuseynli\Desktop\example\VR GROUP\VR-GROUP-Backend\InterviewProject\obj\Debug\net7.0\InterviewProject.genruntimeconfig.cache
+C:\Users\shuseynli\Desktop\example\VR GROUP\VR-GROUP-Backend\InterviewProject\obj\Debug\net7.0\ref\InterviewProject.dll

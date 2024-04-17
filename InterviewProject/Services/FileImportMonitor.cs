@@ -1,12 +1,16 @@
-﻿namespace InterviewProject.Services
+﻿using InterviewProject.Repositories;
+
+namespace InterviewProject.Services
 {
     public class FileImportMonitor
     {
         private readonly string _monitoredFolderPath;
+        private readonly BoxRepository _boxRepository;
 
-        public FileImportMonitor(string monitoredFolderPath)
+        public FileImportMonitor(string monitoredFolderPath, BoxRepository boxRepository)
         {
             _monitoredFolderPath = monitoredFolderPath;
+            _boxRepository = boxRepository;
         }
 
         public void StartMonitoring()
@@ -23,7 +27,7 @@
             }
         }
 
-        private static async Task OnCreatedAsync(object source, FileSystemEventArgs e)
+        private async Task OnCreatedAsync(object source, FileSystemEventArgs e)
         {
             if (e.ChangeType != WatcherChangeTypes.Created)
                 return;
@@ -34,7 +38,7 @@
 
             await foreach (var boxes in boxFileReader)
             {
-                Console.WriteLine(boxes.Count.ToString());
+                await _boxRepository.BulkInsertAsync(boxes);
             }
         }
     }

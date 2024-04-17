@@ -13,37 +13,61 @@ public class BoxRepository
         _connectionString = connectionString;
     }
 
-    public async Task BulkInsert(IReadOnlyList<Box> boxes)
+    public async Task BulkInsertAsync(IReadOnlyList<Box> boxes)
     {
-        (DataTable? BoxesTable, DataTable? ContentsTable) = CreateDataTablesFromBoxes(boxes);
-
-        using (var connection = new SqlConnection(_connectionString))
+        try
         {
+            (var boxesTable, var contentsTable) = CreateDataTablesFromBoxes(boxes);
+            
+            using var connection = new SqlConnection(_connectionString);
             await connection.OpenAsync();
-            using (var transaction = await connection.BeginTransactionAsync())
-            {
-                using (var bulkCopy = new SqlBulkCopy(connection, SqlBulkCopyOptions.Default, (SqlTransaction)transaction))
-                {
-                    bulkCopy.DestinationTableName = "Boxes";
-                    await bulkCopy.WriteToServerAsync(BoxesTable);
 
-                    bulkCopy.DestinationTableName = "Contents";
-                    await bulkCopy.WriteToServerAsync(ContentsTable);
-                }
-                transaction.Commit();
-            }
+            await using var transaction = await connection.BeginTransactionAsync();
+
+            await BulkInsertBoxAsync(connection, (SqlTransaction)transaction, boxesTable);
+            await BulkInsertContent(connection, (SqlTransaction)transaction, contentsTable);
+
+            await transaction.CommitAsync();
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.Message);
         }
     }
 
-    public static (DataTable? BoxesTable, DataTable? ContentsTable) CreateDataTablesFromBoxes(IReadOnlyList<Box> boxes)
+    private static async Task BulkInsertBoxAsync(SqlConnection connection, SqlTransaction transaction, DataTable boxes)
     {
-        if (boxes == null || boxes.Count == 0) return (null, null);
+        using var bulkCopy = new SqlBulkCopy(connection, SqlBulkCopyOptions.Default, transaction);
 
-        DataTable boxesTable = new DataTable("Boxes");
+        bulkCopy.DestinationTableName = "Box";
+        bulkCopy.ColumnMappings.Add("SupplierIdentifier", "SupplierIdentifier");
+        bulkCopy.ColumnMappings.Add("Identifier", "Identifier");
+
+        await bulkCopy.WriteToServerAsync(boxes);
+    }
+
+    private static async Task BulkInsertContent(SqlConnection connection, SqlTransaction transaction, DataTable contentsTable)
+    {
+        using var bulkCopy = new SqlBulkCopy(connection, SqlBulkCopyOptions.Default, transaction);
+
+        bulkCopy.DestinationTableName = "Content";
+        bulkCopy.ColumnMappings.Add("Identifier", "Identifier");
+        bulkCopy.ColumnMappings.Add("PoNumber", "PoNumber");
+        bulkCopy.ColumnMappings.Add("Isbn", "Isbn");
+        bulkCopy.ColumnMappings.Add("Quantity", "Quantity");
+
+        await bulkCopy.WriteToServerAsync(contentsTable);
+    }
+
+    private static (DataTable BoxesTable, DataTable ContentsTable) CreateDataTablesFromBoxes(IReadOnlyList<Box> boxes)
+    {
+        if (boxes == null || boxes.Count == 0) throw new Exception("Box can't be null");
+
+        var boxesTable = new DataTable("Box");
         boxesTable.Columns.Add("SupplierIdentifier", typeof(string));
         boxesTable.Columns.Add("Identifier", typeof(string));
 
-        DataTable contentsTable = new DataTable("Contents");
+        var contentsTable = new DataTable("Content");
         // Content should have foreign key to Box (Identifier)
         contentsTable.Columns.Add("Identifier", typeof(string));
         contentsTable.Columns.Add("PoNumber", typeof(string));
@@ -52,14 +76,14 @@ public class BoxRepository
 
         foreach (var box in boxes)
         {
-            DataRow boxRow = boxesTable.NewRow();
+            var boxRow = boxesTable.NewRow();
             boxRow["SupplierIdentifier"] = box.SupplierIdentifier;
             boxRow["Identifier"] = box.Identifier;
             boxesTable.Rows.Add(boxRow);
 
             foreach (var content in box.Contents)
             {
-                DataRow contentRow = contentsTable.NewRow();
+                var contentRow = contentsTable.NewRow();
                 // Content should have foreign key to Box (Identifier)
                 contentRow["Identifier"] = box.Identifier;
                 contentRow["PoNumber"] = content.PoNumber;
